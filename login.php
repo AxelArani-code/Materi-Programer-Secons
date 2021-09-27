@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         
                         <input type="submit" class="btn btn-outline-primary" value="Ingresar">
                         <button class="btn btn-info mt-2" type="submit">Ingresar</button></form>
-                    <p class="mt-3 mb-0"><a class="text-info small" href="createUser.html">Crear Cuenta</a></p>
+                    <p class="mt-3 mb-0"><a class="text-info small" href="createUser.php">Crear Cuenta</a></p>
                     <p class="mt-3 mb-0"><a class="text-info small" href="#">Olvidaste la contraseña ?</a></p>
                 </div>
             </div>

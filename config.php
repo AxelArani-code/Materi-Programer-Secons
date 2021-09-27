@@ -1,9 +1,8 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = new mysqli("localhost", "axel", "43353606", "desing");
-if ($link->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+$link = mysqli_connect("localhost","axel","43353606","desing");
+if($link=== false){
+ die("ERROR: ". mysqli_connect_error());
 }
-echo $link->host_info . "\n";
 ?>
