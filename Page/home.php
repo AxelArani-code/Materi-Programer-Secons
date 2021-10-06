@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
-$conexion = mysqli_connect("localhost", "root", "", "desing");
+$conexion = mysqli_connect("localhost", "axel", "43353606", "desing");
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -92,9 +92,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </thead>
         <tbody>
 
-          <?php
+         <?php
           $query = "SELECT * FROM task";
-          $result_tasks = mysqli_query($link, $query);    
+          $result_tasks = mysqli_query($conexion , $query);    
 
           while($row = mysqli_fetch_assoc($result_tasks)) { ?>
           <tr>
@@ -102,10 +102,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <td><?php echo $row['description']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
             <td>
-              <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
+              <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">Edit
                 <i class="fas fa-marker"></i>
               </a>
-              <a href="delete_task.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+              <a href="delete_task.php?id=<?php echo $row['id']?>" class="btn btn-danger">Eliminar
                 <i class="far fa-trash-alt"></i>
               </a>
             </td>
